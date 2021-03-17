@@ -1,3 +1,5 @@
+@import 'colors';
+
 .book {
   display: flex;
   padding: 24px;
@@ -5,14 +7,15 @@
 
 .book-cover {
   height: 100%;
-  width: 100%;
   margin-right: 52px;
-  max-width: 261px;
   max-height: 368px;
+  max-width: 261px;
+  width: 100%;
 }
 
 .book-info {
   display: flex;
+  flex: 1;
   flex-direction: column;
 
   .title {
@@ -22,9 +25,9 @@
   }
 
   .subtitle {
+    color: $gray;
     font-size: 24px;
     font-weight: bold;
-    color: #828282;
   }
 
   .info {
@@ -34,7 +37,7 @@
   }
 
   .data {
+    color: $gray;
     font-size: 20px;
-    color: #828282;
   }
 }
