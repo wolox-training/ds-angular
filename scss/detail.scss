@@ -1,7 +1,19 @@
 .book {
   display: flex;
+  padding: 24px;
+}
+
+.book-cover {
+  height: 100%;
+  width: 100%;
+  margin-right: 52px;
+  max-width: 261px;
+  max-height: 368px;
+}
+
+.book-info {
+  display: flex;
   flex-direction: column;
-  padding: 10px;
 
   .title {
     font-size: 32px;
