@@ -1,10 +1,42 @@
 @import 'colors';
 
-.book-detail {
-  box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
+.detail-container {
+  align-items: center;
   display: flex;
-  padding: 24px;
+  flex-direction: column;
+  margin-top: 36px;
+
+  .back {
+    align-items: center;
+    display: flex;
+    max-width: 70%;
+    margin-bottom: 16px;
+    width: 100%;
+
+    .btn-back {
+      font-size: 20px;
+
+      &::before {
+        content: url('./images/back-arrow-20.png');
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+        width: 20px;
+      }
+    }
+  }
+
+  .book-detail {
+    box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
+    display: flex;
+    height: 100%;
+    padding: 24px;
+    max-height: 416px;
+    max-width: 900px;
+    width: 100%;
+  }
 }
+
 
 .book-cover {
   position: relative;
