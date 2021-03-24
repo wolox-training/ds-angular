@@ -1,4 +1,7 @@
 $badge-width: 70px;
+$mobile-width: 880px;
+$tablet-width: 1024px;
+$title-border: 4px solid $earls-green;
 
 .detail-container {
   align-items: center;
@@ -28,7 +31,8 @@ $badge-width: 70px;
 
   .book-detail {
     box-shadow: 4px 4px 10px 0 rgba($black, 0.5);
-    display: flex;
+    display: grid;
+    grid-template: 56px auto / 295px auto 1fr;
     height: 100%;
     max-height: 416px;
     max-width: 900px;
@@ -40,7 +44,8 @@ $badge-width: 70px;
 
 .book-cover {
   position: relative;
-
+  grid-row: span 2;
+  
   .cover {
     height: 100%;
     margin: 0 52px 0 0;
@@ -50,7 +55,7 @@ $badge-width: 70px;
   }
 
   .badge {
-    bottom: 280px;
+    bottom: 286px;
     max-width: $badge-width;
     position: absolute;
     right: 32px;
@@ -63,20 +68,9 @@ $badge-width: 70px;
   display: flex;
   flex: 1;
   flex-direction: column;
-
-  .title {
-    border-bottom: 4px solid $earls-green;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 52px;
-    padding-bottom: 12px;
-  }
-
-  .subtitle {
-    color: $gray;
-    font-size: 24px;
-    font-weight: bold;
-  }
+  grid-column: span 2;
+  margin-top: 36px;
+  order: 3;
 
   .info {
     font-size: 20px;
@@ -90,7 +84,58 @@ $badge-width: 70px;
   }
 }
 
-@media only screen and (max-width: 1024px) {
+.title {
+  border-bottom: $title-border;
+  font-size: 32px;
+  font-weight: bold;
+  order: 1;
+}
+
+.subtitle {
+  border-bottom: $title-border;
+  color: $gray;
+  font-size: 24px;
+  font-weight: bold;
+  order: 2;
+}
+
+@media only screen and (min-width: calc(#{$mobile-width} + 1px)) and (max-width: $tablet-width) {
+  .detail-container {
+    .back {
+      max-width: 853px;
+    }
+
+    .book-detail {
+      grid-template: 38px 70px 1fr / 316px 1fr;
+      max-height: 569px;
+      max-width: 853px;
+      padding: 32px;
+    }
+  }
+
+  .book-cover {
+    order: 3;
+  }
+
+  .title {
+    border: 0;
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .subtitle {
+    border-bottom: none;
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .book-info {
+    grid-column: auto;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: $mobile-width) {
   .detail-container {
     flex-direction: column-reverse;
     
@@ -100,7 +145,7 @@ $badge-width: 70px;
     }
 
     .book-detail {
-      flex-direction: column;
+      grid-template: none;
       max-height: 570px;
       max-width: 336px;
       padding: 18px;
@@ -108,13 +153,9 @@ $badge-width: 70px;
   }
 
   .book-cover {
+    grid-row: 2;
     margin: 20px 44px;
 
-    .cover {
-      max-height: 299px;
-      max-width: 212px;
-    }
-    
     .badge {
       bottom: 246px;
       left: 172px;
@@ -122,17 +163,22 @@ $badge-width: 70px;
     }
   }
 
-  .book-info {
-    .title {
-      font-size: 24px;
-      margin-bottom: 18px;
-      padding-bottom: 6px;
-    }
+  .title {
+    border: 0;
+    font-size: 24px;
+    text-align: center;
+  }
 
-    .subtitle {
-      font-size: 16px;
-      vertical-align: middle;
-    }
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    text-align: center;
+  }
+  
+  .book-info {
+    grid-column: auto;
+    margin-top: 0;
 
     .info {
       font-size: 14px;
