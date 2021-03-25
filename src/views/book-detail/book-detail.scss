@@ -98,7 +98,7 @@ $title-border: 4px solid $earls-green;
   }
 }
 
-@media only screen and (min-width: calc(#{$mobile-width} + 1px)) and (max-width: $tablet-width) {
+@media only screen and (max-width: $tablet-width) {
 
   .detail-container {
 
