@@ -1,3 +1,5 @@
+$badge-width: 70px;
+
 .detail-container {
   align-items: center;
   display: flex;
@@ -49,11 +51,11 @@
 
   .badge {
     bottom: 280px;
-    height: 100%;
-    max-height: 104px;
+    max-width: $badge-width;
     position: absolute;
     right: 32px;
     transform: rotate(14deg);
+    width: 100%;
   }
 }
 
@@ -85,5 +87,60 @@
   .data {
     color: $gray;
     font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .detail-container {
+    flex-direction: column-reverse;
+    
+    .back {
+      justify-content: center;
+      margin: 20px 0 0;
+    }
+
+    .book-detail {
+      flex-direction: column;
+      max-height: 570px;
+      max-width: 336px;
+      padding: 18px;
+    }
+  }
+
+  .book-cover {
+    margin: 20px 44px;
+
+    .cover {
+      max-height: 299px;
+      max-width: 212px;
+    }
+    
+    .badge {
+      bottom: 246px;
+      left: 172px;
+      max-width: calc(#{$badge-width} * 0.7);
+    }
+  }
+
+  .book-info {
+    .title {
+      font-size: 24px;
+      margin-bottom: 18px;
+      padding-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      vertical-align: middle;
+    }
+
+    .info {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .data {
+      font-size: 14px;
+    }
   }
 }
