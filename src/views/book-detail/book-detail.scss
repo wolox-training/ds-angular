@@ -72,7 +72,7 @@ $title-border: 4px solid $earls-green;
     bottom: 286px;
     max-width: $badge-width;
     position: absolute;
-    right: 32px;
+    right: 14px;
     transform: rotate(14deg);
     width: 100%;
   }
@@ -128,6 +128,10 @@ $title-border: 4px solid $earls-green;
 
   .book-cover {
     order: 3;
+
+    .badge {
+      right: 34px;
+    }
   }
 
   .book-info {
@@ -172,8 +176,8 @@ $title-border: 4px solid $earls-green;
     margin: 20px 44px;
 
     .badge {
-      bottom: 246px;
-      left: 172px;
+      bottom: 270px;
+      left: 176px;
       max-width: calc(#{$badge-width} * 0.7);
     }
   }
