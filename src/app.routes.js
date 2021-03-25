@@ -4,7 +4,7 @@ angular.module('app-bootstrap').config(['$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('bookDetail', {
-        url: '/book-detail',
+        url: '/book-detail/{bookId}',
         component: 'bookDetail'
       })
       .state('bookList', {
