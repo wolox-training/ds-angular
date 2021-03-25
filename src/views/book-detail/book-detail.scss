@@ -38,6 +38,21 @@ $title-border: 4px solid $earls-green;
     max-width: 900px;
     padding: 24px;
     width: 100%;
+
+    .title {
+      border-bottom: $title-border;
+      font-size: 32px;
+      font-weight: 700;
+      order: 1;
+    }
+
+    .subtitle {
+      border-bottom: $title-border;
+      color: $gray;
+      font-size: 24px;
+      font-weight: 700;
+      order: 2;
+    }
   }
 }
 
@@ -83,21 +98,6 @@ $title-border: 4px solid $earls-green;
   }
 }
 
-.title {
-  border-bottom: $title-border;
-  font-size: 32px;
-  font-weight: 700;
-  order: 1;
-}
-
-.subtitle {
-  border-bottom: $title-border;
-  color: $gray;
-  font-size: 24px;
-  font-weight: 700;
-  order: 2;
-}
-
 @media only screen and (min-width: calc(#{$mobile-width} + 1px)) and (max-width: $tablet-width) {
 
   .detail-container {
@@ -111,23 +111,23 @@ $title-border: 4px solid $earls-green;
       max-height: 569px;
       max-width: 853px;
       padding: 32px;
+
+      .title {
+        border: 0;
+        grid-column: span 2;
+        text-align: center;
+      }
+
+      .subtitle {
+        border-bottom: none;
+        grid-column: span 2;
+        text-align: center;
+      }
     }
   }
 
   .book-cover {
     order: 3;
-  }
-
-  .title {
-    border: 0;
-    grid-column: span 2;
-    text-align: center;
-  }
-
-  .subtitle {
-    border-bottom: none;
-    grid-column: span 2;
-    text-align: center;
   }
 
   .book-info {
@@ -151,6 +151,19 @@ $title-border: 4px solid $earls-green;
       max-height: 570px;
       max-width: 336px;
       padding: 18px;
+
+      .title {
+        border: 0;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        text-align: center;
+      }
     }
   }
 
@@ -163,19 +176,6 @@ $title-border: 4px solid $earls-green;
       left: 172px;
       max-width: calc(#{$badge-width} * 0.7);
     }
-  }
-
-  .title {
-    border: 0;
-    font-size: 24px;
-    text-align: center;
-  }
-
-  .subtitle {
-    font-size: 16px;
-    margin-bottom: 18px;
-    padding-bottom: 12px;
-    text-align: center;
   }
 
   .book-info {
