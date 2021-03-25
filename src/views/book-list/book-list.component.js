@@ -9,10 +9,12 @@ angular.module('app-bootstrap').component('bookList', {
     this.filter = '';
   }]
 }).filter('searchBook', function () {
-  return (books, filter) =>
-    books.filter((book) => {
+  return (books, filter) => {
+    const text = filter.toLowerCase();
+    return books.filter((book) => {
       const title = book.title.toLowerCase();
       const author = book.author.toLowerCase();
-      return title.includes(filter) || author.includes(filter);
+      return title.includes(text) || author.includes(text);
     });
+  };
 });
