@@ -1,13 +1,13 @@
 <div class="login-container">
   <div class="login">
     <img class="logo" ng-src="{{$ctrl.logoWolox}}" alt="Logo Wolox" />
-    <form class="login-form" name="login" ng-submit="login.$valid && $ctrl.login()" novalidate>
+    <form class="form" name="login" ng-submit="login.$valid && $ctrl.login()" novalidate>
       <form-input model="$ctrl.user.email" formref="login" label="Email" type="email" name="email"
         required="true"></form-input>
       <form-input model="$ctrl.user.password" formref="login" label="Password" type="password" 
         name="password" minlength="6" required="true"></form-input>
-      <button class="button-login">Login</button>
+      <button class="btn-filled">Login</button>
     </form>
-    <button class="button-signup" ui-sref="signup">Sign Up</button>
+    <button class="btn-outline" ui-sref="signup">Sign Up</button>
   </div>
 </div>
