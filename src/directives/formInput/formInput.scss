@@ -1,0 +1,9 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  .error {
+    color: rgba($red, 0.6);
+    margin-top: 6px;
+  }
+}
