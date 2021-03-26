@@ -11,6 +11,7 @@ angular.module('app-bootstrap').directive('formInput', function() {
       minlength: '@minlength',
       model: '=model',
       pattern: '=pattern',
+      patternError: '@patternError',
       required: '@required',
       type: '@type'
     }
