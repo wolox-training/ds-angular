@@ -1,0 +1,19 @@
+<div class="input-container">
+  <label class="label" for="{{name}}">{{label}}</label>
+  <input 
+    class="input"
+    name="{{name}}"
+    ng-maxlength="maxlength"
+    ng-minlength="minlength"
+    ng-model="model"
+    ng-required="required"
+    id="{{name}}"
+    type="{{type}}"
+  />
+  <div ng-show="formref.$submitted || formref[name].$touched">
+    <span class="error" ng-show="formref[name].$error.required">El campo es requerido</span>
+    <span class="error" ng-show="formref[name].$error.minlength">Debe contener mínimo {{minlength}} caracteres</span>
+    <span class="error" ng-show="formref[name].$error.maxlength">Debe contener máximo {{maxlength}} caracteres</span>
+    <span class="error" ng-show="formref[name].$error.email">El formato del email no es válido</span>
+  </div>
+</div>

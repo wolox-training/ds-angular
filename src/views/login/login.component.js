@@ -5,5 +5,13 @@ angular.module('app-bootstrap').component('login', {
   template: require('./login.html'),
   controller: [function () {
     this.logoWolox = logoWolox;
+    this.user = {
+      email: '',
+      password: ''
+    };
+
+    this.login = () => {
+
+    };
   }]
 });
