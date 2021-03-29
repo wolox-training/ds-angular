@@ -15,6 +15,8 @@ angular.module('app-bootstrap').component('login', {
         userService.signin(this.user)
           .then((resp)=>{
             localStorageService.set('access-token', resp.headers('Access-token'));
+            localStorageService.set('client', resp.headers('client'));
+            localStorageService.set('uid', resp.headers('uid'));
             $state.go('bookList');
           }, (error) => {
             // eslint-disable-next-line no-console
