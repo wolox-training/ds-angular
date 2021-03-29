@@ -4,8 +4,9 @@ import badge from '../../assets/images/badge.png';
 
 angular.module('app-bootstrap').component('bookDetail', {
   template: require('./book-detail.html'),
-  controller: [function () {
+  controller: ['bookService', '$stateParams', function (bookService, $stateParams) {
     this.bookCover = bookCover;
     this.badge = badge;
+    this.book = bookService.getBook($stateParams.bookId);
   }]
 });

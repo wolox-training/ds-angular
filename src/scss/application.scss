@@ -4,10 +4,12 @@
 
 @import 'base';
 
+@import '../components/navbar/navbar';
+
+@import '../directives/searchbar/searchbar';
+
 @import '../views/book-detail/book-detail';
 
 @import '../views/book-list/book-list';
-
-@import '../components/navbar/navbar';
 
 @import '../views/login/login';

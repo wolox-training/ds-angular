@@ -1,42 +1,9 @@
+<searchbar model="$ctrl.filter"></searchbar>
+
 <div class="book-list">
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
-  </div>
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
-  </div>
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
-  </div>
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
-  </div>
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
-  </div>
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
-  </div>
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
-  </div>
-  <div class="book">
-    <img class="cover" ng-src="{{$ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">Título del libro</span>
-    <span class="author">Autor del libro</span>
+  <div class="book" ng-repeat="book in $ctrl.books | searchBook: $ctrl.filter" ui-sref="bookDetail({bookId: book.id})">
+    <img class="cover" ng-src="{{book.image_url || $ctrl.bookCover}}" alt="Book cover" />
+    <span class="title">{{book.title}}</span>
+    <span class="author">{{book.author}}</span>
   </div>
 </div>

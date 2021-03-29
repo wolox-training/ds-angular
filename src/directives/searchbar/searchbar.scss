@@ -1,0 +1,27 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 45px;
+
+  .container {
+    max-width: 646px;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: url('../assets/images/search-icon.png');
+      position: absolute;
+      right: 16px;
+      top: 10px;
+    }
+  }
+
+  .search-input {
+    color: $gray;
+    border: 1px solid $mercury;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+}
