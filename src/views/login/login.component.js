@@ -3,15 +3,23 @@ import logoWolox from '../../assets/images/LogoWolox.png';
 
 angular.module('app-bootstrap').component('login', {
   template: require('./login.html'),
-  controller: [function () {
-    this.logoWolox = logoWolox;
-    this.user = {
-      email: '',
-      password: ''
-    };
+  controller: ['userService', '$state', 'localStorageService',
+    function ($userService, $state, localStorageService) {
+      this.logoWolox = logoWolox;
+      this.user = {
+        email: '',
+        password: ''
+      };
 
-    this.login = () => {
-
-    };
-  }]
+      this.login = () => {
+        $userService.signin(this.user)
+          .then((resp)=>{
+            localStorageService.set('access-token', resp.headers('Access-token'));
+            $state.go('bookList');
+          }, (error) => {
+            // eslint-disable-next-line no-console
+            console.log(error);
+          });
+      };
+    }]
 });
