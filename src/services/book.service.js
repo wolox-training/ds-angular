@@ -1,5 +1,4 @@
 import angular from 'angular';
-import books from './data-books.json';
 
 angular.module('app-bootstrap').factory('bookService', ['$http', 'localStorageService',
   function($http, localStorageService) {
@@ -14,7 +13,13 @@ angular.module('app-bootstrap').factory('bookService', ['$http', 'localStorageSe
           uid
         }
       }),
-      getBook: (id) => books.find((book) => book.id === parseInt(id))
+      getBook: (id) => $http.get(`${process.env.API_URL}/books/${id}`, {
+        headers: {
+          'access-token': accessToken,
+          client,
+          uid
+        }
+      })
     };
   }
 ]);
