@@ -4,6 +4,8 @@
 
 @import 'base';
 
+@import 'shared/signupLogin';
+
 @import '../components/navbar/navbar';
 
 @import '../directives/searchbar/searchbar';
@@ -15,3 +17,5 @@
 @import '../views/book-list/book-list';
 
 @import '../views/login/login';
+
+@import '../views/signup/signup';

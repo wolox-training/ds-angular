@@ -6,6 +6,7 @@
     ng-maxlength="maxlength"
     ng-minlength="minlength"
     ng-model="model"
+    ng-pattern="pattern"
     ng-required="required"
     id="{{name}}"
     type="{{type}}"
@@ -15,5 +16,6 @@
     <span class="error" ng-show="formref[name].$error.minlength">Debe contener mínimo {{minlength}} caracteres</span>
     <span class="error" ng-show="formref[name].$error.maxlength">Debe contener máximo {{maxlength}} caracteres</span>
     <span class="error" ng-show="formref[name].$error.email">El formato del email no es válido</span>
+    <span class="error" ng-show="formref[name].$error.pattern">{{patternError}}</span>
   </div>
 </div>
