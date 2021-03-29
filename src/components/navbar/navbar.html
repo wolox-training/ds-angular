@@ -1,6 +1,6 @@
 <nav class="navbar-container">
   <div class="navbar">
-    <img class="logo" ng-src="{{$ctrl.logoWolox}}" alt="wolox logo" />
-    <span class="logout">Logout</span>
+    <img class="logo" ng-src="{{$ctrl.logoWolox}}" alt="wolox logo" ui-sref="bookList"/>
+    <button class="logout" ng-click="$ctrl.logout()">Logout</button>
   </div>
 </nav>
