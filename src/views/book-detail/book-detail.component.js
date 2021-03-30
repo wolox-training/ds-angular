@@ -7,6 +7,12 @@ angular.module('app-bootstrap').component('bookDetail', {
   controller: ['bookService', '$stateParams', function (bookService, $stateParams) {
     this.bookCover = bookCover;
     this.badge = badge;
-    this.book = bookService.getBook($stateParams.bookId);
+    this.book = {};
+    bookService.getBook($stateParams.bookId).then(({ data }) => {
+      this.book = data;
+    }, (error) => {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    });
   }]
 });
