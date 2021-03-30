@@ -2,16 +2,16 @@
   <div class="signup">
     <img class="logo" ng-src="{{$ctrl.logoWolox}}" alt="Logo Wolox" />
     <form class="form" name="signup" ng-submit="signup.$valid && $ctrl.signup()" novalidate>
-      <form-input model="$ctrl.user.name" formref="signup" label="Nombre" type="text" name="name"
+      <form-input model="$ctrl.user.first_name" formref="signup" label="Nombre" type="text" name="name"
         required="true"></form-input>
-      <form-input model="$ctrl.user.lastName" formref="signup" label="Apellido" type="text" name="lastname"
+      <form-input model="$ctrl.user.last_name" formref="signup" label="Apellido" type="text" name="lastname"
         required="true"></form-input>
       <form-input model="$ctrl.user.email" formref="signup" label="Email" type="email" name="email"
         required="true"></form-input>
       <form-input model="$ctrl.user.password" formref="signup" label="Password" type="password" 
         name="password" minlength="8" maxlength="52" required="true" pattern="$ctrl.regexPassword"
         pattern-error="La contraseña debe contener letras y números"></form-input>
-      <form-input model="$ctrl.user.passwordConfirm" formref="signup" label="Confirmación de Password" 
+      <form-input model="$ctrl.user.password_confirmation" formref="signup" label="Confirmación de Password" 
         type="password" name="passwordConfirm" minlength="8" maxlength="52" required="true" 
         pattern="$ctrl.user.password" pattern-error="Las contraseñas deben coincidir"></form-input>
       <button class="btn-filled">Sign Up</button>

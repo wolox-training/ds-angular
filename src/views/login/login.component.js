@@ -4,7 +4,7 @@ import logoWolox from '../../assets/images/LogoWolox.png';
 angular.module('app-bootstrap').component('login', {
   template: require('./login.html'),
   controller: ['userService', '$state', 'localStorageService',
-    function ($userService, $state, localStorageService) {
+    function (userService, $state, localStorageService) {
       this.logoWolox = logoWolox;
       this.user = {
         email: '',
@@ -12,7 +12,7 @@ angular.module('app-bootstrap').component('login', {
       };
 
       this.login = () => {
-        $userService.signin(this.user)
+        userService.signin(this.user)
           .then((resp)=>{
             localStorageService.set('access-token', resp.headers('Access-token'));
             $state.go('bookList');
