@@ -1,3 +1,5 @@
 import '@webcomponents/webcomponentsjs';
 
-import './wc-hello-world/wc-hello-world';
+import './card/card';
+
+import './button/button';

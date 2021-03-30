@@ -1,9 +1,6 @@
 <navbar></navbar>
 <searchbar model="$ctrl.filter"></searchbar>
 <div class="book-list">
-  <div class="book" ng-repeat="book in $ctrl.books | searchBook: $ctrl.filter" ui-sref="bookDetail({bookId: book.id})">
-    <img class="cover" ng-src="{{book.image_url || $ctrl.bookCover}}" alt="Book cover" />
-    <span class="title">{{book.title}}</span>
-    <span class="author">{{book.author}}</span>
-  </div>
+  <wc-card ng-repeat="book in $ctrl.books | searchBook: $ctrl.filter" ui-sref="bookDetail({bookId: book.id})"
+    cover="{{book.image_url || $ctrl.bookCover}}" title="{{book.title}}" author="{{book.author}}"></wc-card>
 </div>
