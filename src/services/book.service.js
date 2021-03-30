@@ -5,21 +5,14 @@ angular.module('app-bootstrap').factory('bookService', ['$http', 'localStorageSe
     const accessToken = localStorageService.get('access-token');
     const client = localStorageService.get('client');
     const uid = localStorageService.get('uid');
+    const headers = {
+      'access-token': accessToken,
+      client,
+      uid
+    };
     return {
-      getBooks: () => $http.get(`${process.env.API_URL}/books`, {
-        headers: {
-          'access-token': accessToken,
-          client,
-          uid
-        }
-      }),
-      getBook: (id) => $http.get(`${process.env.API_URL}/books/${id}`, {
-        headers: {
-          'access-token': accessToken,
-          client,
-          uid
-        }
-      })
+      getBooks: () => $http.get(`${process.env.API_URL}/books`, { headers }),
+      getBook: (id) => $http.get(`${process.env.API_URL}/books/${id}`, { headers })
     };
   }
 ]);
